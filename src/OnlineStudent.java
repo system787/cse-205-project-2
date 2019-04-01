@@ -17,7 +17,7 @@ public class OnlineStudent extends Student {
     private boolean mTechFee;
 
     /**
-     * OnlineStudent
+     * OnlineStudent(String, String, String)
      *
      * Constructor method for creating OnlineStudent objects
      * @param pId the student's ID stored as a String
@@ -29,7 +29,7 @@ public class OnlineStudent extends Student {
     }
 
     /**
-     * calcTuition
+     * calcTuition()
      *
      * Calculates the OnlineStudent's tuition based on current rates and applicable tech fees
      */
@@ -45,7 +45,7 @@ public class OnlineStudent extends Student {
     }
 
     /**
-     * getTechFee
+     * getTechFee()
      *
      * Accessor method for student's applicable tech fee status
      * @return true for applicable tech fees, false for not applicable
@@ -55,7 +55,7 @@ public class OnlineStudent extends Student {
     }
 
     /**
-     * setTechFee
+     * setTechFee(boolean)
      *
      * Mutator for student's tech fee applicability
      * @param pTechFee true for applicable tech fees, false for not applicable

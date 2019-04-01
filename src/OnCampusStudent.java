@@ -22,7 +22,7 @@ public class OnCampusStudent extends Student {
     private double mProgramFee;
 
     /**
-     * OnCampusStudent
+     * OnCampusStudent(String, String, String)
      *
      * Constructor for OnCampusStudent objects
      *
@@ -34,6 +34,11 @@ public class OnCampusStudent extends Student {
         super(pId, pFname, pLname);
     }
 
+    /**
+     * calcTuition()
+     *
+     * Calculates the student's tuition based on current rates and residency status
+     */
     @Override
     protected void calcTuition() {
         double t;
@@ -44,7 +49,7 @@ public class OnCampusStudent extends Student {
             t = TuitionConstants.ONCAMP_NONRES_BASE;
         }
 
-        t += getmProgramFee();
+        t += getProgramFee();
 
         if (getCredits() > TuitionConstants.ONCAMP_MAX_CREDITS) {
             t += ((getCredits() - TuitionConstants.ONCAMP_MAX_CREDITS) * TuitionConstants.ONCAMP_ADD_CREDITS);
@@ -53,18 +58,47 @@ public class OnCampusStudent extends Student {
         setTuition(t);
     }
 
-    public double getmProgramFee() {
+    /**
+     * getProgramFee()
+     *
+     * Accessor method for student's program fee
+     *
+     * @return program fee as a double
+     */
+    public double getProgramFee() {
         return mProgramFee;
     }
 
+    /**
+     * getResidency()
+     *
+     * Accessor method for student's residency status
+     *
+     * @return residency status as an int (1 for Resident, 2 for Non-Resident)
+     */
     public int getResidency() {
         return mResident;
     }
 
+
+    /**
+     * setProgramFee(double)
+     *
+     * Mutator method to set student's program fee
+     *
+     * @param pProgramFee student's program fee rate as a double
+     */
     public void setProgramFee(double pProgramFee) {
         mProgramFee = pProgramFee;
     }
 
+    /**
+     * setResidency(int)
+     *
+     * Mutator method to set student's residency status (RESIDENT = 1, NON_RESIDENT = 2)
+     *
+     * @param pResidency static instance variables RESIDENT or NON_RESIDENT
+     */
     public void setResidency(int pResidency) {
         mResident = pResidency;
     }
